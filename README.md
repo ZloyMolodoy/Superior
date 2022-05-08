@@ -39,4 +39,8 @@ Pixel art
 ~~~
 
 
+**Концепт**
+
+[Кадет 0.1v](https://github.com/ZloyMolodoy/Superior/blob/main/Concept/Cadets/ToReadMe.png)
+<br><br>
 **Список будет пополняться**
