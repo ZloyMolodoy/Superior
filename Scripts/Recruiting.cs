@@ -37,30 +37,37 @@ public class Recruiting : MonoBehaviour
     public void PlusToRG() 
     {
 
-        for(int i = 0; i < listCadet.Count; i++) 
+        for(int index = 0; index < listCadet.Count; index++) 
         {
             RandomazeCadets(1);
             RandomazeCadets(3);
-            listCadet[i].name = nameV;
-            listCadet[i].spriteNPC = gm.Cadets;
-            listCadet[i].rank = rankV;
-            listCadet[i].spriteRank = rankSV;
+            listCadet[index].name = nameV;
+            listCadet[index].spriteNPC = gm.Cadets;
+            listCadet[index].rank = rankV;
+            listCadet[index].spriteRank = rankSV;
             //listCadet.Add(new RGcadets(nameV, gm.Cadets, rankV, rankSV));
-            cx[i].name.text = listCadet[i].name;
-            cx[i].rank.text = listCadet[i].rank;
+            cx[index].name.text = listCadet[index].name;
+            cx[index].rank.text = listCadet[index].rank;
         }
     }
 
 
     public void BuyingCadet(int index) 
     {
-    
-    
-    
+
+        gm.cd.listCadet.Add(new cadets(listCadet[index].name, listCadet[index].spriteNPC, listCadet[index].rank, listCadet[index].spriteRank));
+
+        RandomazeCadets(1);
+        RandomazeCadets(3);
+        listCadet[index].name = nameV;
+        listCadet[index].spriteNPC = gm.Cadets;
+        listCadet[index].rank = rankV;
+        listCadet[index].spriteRank = rankSV;
+        cx[index].name.text = listCadet[index].name;
+        cx[index].rank.text = listCadet[index].rank;
     }
 
 
-    //list2.AddRange(list1.ToArray());
 
     public void RandomazeCadets(int index) 
     {

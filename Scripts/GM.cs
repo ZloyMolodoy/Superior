@@ -14,6 +14,9 @@ public class GM : MonoBehaviour
     public Sprite privates, capral, sergant, superSergant, specialSergant, masterSergant, upperSergant;
     public Sprite Cadets;
 
+
+    public int rep;
+
     public void SAH(int index) 
     {
         switch (index) 

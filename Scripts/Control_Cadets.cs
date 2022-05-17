@@ -22,8 +22,16 @@ public class cadets
     public Sprite spriteNPC;
 
     [Tooltip("Переменная ранга")]
-    public int rank;
+    public string rank;
 
     [Tooltip("Спрайт ранга")]
     public Sprite spriteRank;
+
+    public cadets(string nameC, Sprite NPC, string rankC, Sprite spriteRankC)
+    {
+        name = nameC;
+        spriteNPC = NPC;
+        rank = rankC;
+        spriteRank = spriteRankC;
+    }
 }

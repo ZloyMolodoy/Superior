@@ -1,0 +1,3 @@
+For to Recruiting script
+	Если rep > 0.8 то
+		
