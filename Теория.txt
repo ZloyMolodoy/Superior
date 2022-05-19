@@ -1,3 +1,20 @@
 For to Recruiting script
 	Если rep > 0.8 то
 		
+
+		privates, capral, sergant, superSergant, specialSergant, masterSergant, upperSergant;
+For exp Cadets
+	от 0 до 200
+		рядовой (private)
+	от 201 до 700
+		капрал(capral)
+	от 701 до 1300
+		сержант(sergant)
+	от 1301 до 2000
+		Супер сержант(Super Sergant)
+	от 2001 до 3000
+		специальный сержант ( Special Sergant)
+	от 3001 до 4100
+		мастер сержант(Master Sergant)
+	от 4101 до 5500
+		Высший сержант(Upper Sergant)

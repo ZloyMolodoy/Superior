@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,74 +9,92 @@ public class Recruiting : MonoBehaviour
     public List<RGcadets> listCadet = new List<RGcadets>();
     public List<Complex> cx = new List<Complex>();
     [Space]
-    
 
-
+    private int idV;
     private string nameV;
     private string rankV;
     private Sprite rankSV;
-
-
-
-
-
-
-    public void updateRG() 
+    private int expV;
+    private int strengthV;
+    private int agilityV;
+    private int staminaV;
+    private int intelligenceV;
+    private int combatTrainingV;
+    private int marchingV;
+    public void UpdateRG()
     {
 
-        if (listCadet.Count == 9) 
+        if (listCadet.Count == 9)
         {
             PlusToRG();
         }
         else { print("ERROR, Recruiting script, element cadets"); }
-    
+
     }
 
-
-    public void PlusToRG() 
+    public void PlusToRG()
     {
 
-        for(int index = 0; index < listCadet.Count; index++) 
+        for (int index = 0; index < listCadet.Count; index++)
         {
             RandomazeCadets(1);
+            RandomazeCadets(2);
             RandomazeCadets(3);
+            //listCadet[index].id = idV;
             listCadet[index].name = nameV;
             listCadet[index].spriteNPC = gm.Cadets;
             listCadet[index].rank = rankV;
             listCadet[index].spriteRank = rankSV;
-            //listCadet.Add(new RGcadets(nameV, gm.Cadets, rankV, rankSV));
+            listCadet[index].exp = expV;
+            listCadet[index].strength = strengthV;
+            listCadet[index].agility = agilityV;
+            listCadet[index].stamina = staminaV;
+            listCadet[index].intelligence = intelligenceV;
+            listCadet[index].combatTraining = combatTrainingV;
+            listCadet[index].marching = marchingV;
             cx[index].name.text = listCadet[index].name;
             cx[index].rank.text = listCadet[index].rank;
         }
     }
 
 
-    public void BuyingCadet(int index) 
+    public void BuyingCadet(int index)
     {
+        gm.cd.listCadet.Add(new Cadets(listCadet[index].id, listCadet[index].name, listCadet[index].spriteNPC, listCadet[index].rank, listCadet[index].spriteRank, listCadet[index].exp, listCadet[index].strength, listCadet[index].agility, listCadet[index].stamina, listCadet[index].intelligence, listCadet[index].combatTraining, listCadet[index].marching));
 
-        gm.cd.listCadet.Add(new cadets(listCadet[index].name, listCadet[index].spriteNPC, listCadet[index].rank, listCadet[index].spriteRank));
+        gm.cd.sc.SpawnCadets(index);
 
         RandomazeCadets(1);
+        RandomazeCadets(2);
         RandomazeCadets(3);
+        //listCadet[index].id = idV;
         listCadet[index].name = nameV;
         listCadet[index].spriteNPC = gm.Cadets;
         listCadet[index].rank = rankV;
         listCadet[index].spriteRank = rankSV;
+        listCadet[index].exp = expV;
+        listCadet[index].strength = strengthV;
+        listCadet[index].agility = agilityV;
+        listCadet[index].stamina = staminaV;
+        listCadet[index].intelligence = intelligenceV;
+        listCadet[index].combatTraining = combatTrainingV;
+        listCadet[index].marching = marchingV;
         cx[index].name.text = listCadet[index].name;
         cx[index].rank.text = listCadet[index].rank;
     }
 
 
 
-    public void RandomazeCadets(int index) 
+    public void RandomazeCadets(int index)
     {
-        switch (index) 
+        //idV = Random.Range(1000000, 9999999);
+        switch (index)
         {
             case 1: //Name
                 int n1;
-                n1 = Random.Range(1, 20);
-                switch (n1) 
-                    {
+                n1 = Random.Range(1, 44);
+                switch (n1)
+                {
                     case 1:
                         nameV = "Jack Holand";
                         break;
@@ -138,49 +155,292 @@ public class Recruiting : MonoBehaviour
                     case 20:
                         nameV = "Christopher Cross";
                         break;
-                    }
-            break;
+                    case 21:
+                        nameV = "Artem Kunavin";
+                        break;
+                    case 22:
+                        nameV = "Daniel Griffin";
+                        break;
+                    case 23:
+                        nameV = "Wayne Cox";
+                        break;
+                    case 24:
+                        nameV = "Raymond Fox";
+                        break;
+                    case 25:
+                        nameV = "Curtis Brooks";
+                        break;
+                    case 26:
+                        nameV = "Robert Jenkins";
+                        break;
+                    case 27:
+                        nameV = "Brian White";
+                        break;
+                    case 28:
+                        nameV = "Ronald McGee";
+                        break;
+                    case 29:
+                        nameV = "Robert Stephens";
+                        break;
+                    case 30:
+                        nameV = "Antonio Meyer";
+                        break;
+                    case 31:
+                        nameV = "Stanley Smith";
+                        break;
+                    case 32:
+                        nameV = "Joseph Leonard";
+                        break;
+                    case 33:
+                        nameV = "Christopher Cross";
+                        break;
+                    case 34:
+                        nameV = "Artem Kunavin";
+                        break;
+                    case 35:
+                        nameV = "Daniel Griffin";
+                        break;
+                    case 36:
+                        nameV = "Wayne Cox";
+                        break;
+                    case 37:
+                        nameV = "Raymond Fox";
+                        break;
+                    case 38:
+                        nameV = "Curtis Brooks";
+                        break;
+                    case 39:
+                        nameV = "Robert Jenkins";
+                        break;
+                    case 40:
+                        nameV = "Brian White";
+                        break;
+                    case 42:
+                        nameV = "Ronald McGee";
+                        break;
+                    case 43:
+                        nameV = "Robert Stephens";
+                        break;
+                    case 44:
+                        nameV = "Antonio Meyer";
+                        break;
+                }
+                break;
+            case 2:
+                int h;
+                h = Random.Range(1, 5);
+                switch (h)
+                {
+                    case 1:
+                        strengthV = h;
+                        break;
+                    case 2:
+                        strengthV = h;
+                        break;
+                    case 3:
+                        strengthV = h;
+                        break;
+                    case 4:
+                        strengthV = h;
+                        break;
+                    case 5:
+                        strengthV = h;
+                        break;
+
+                }
+                h = Random.Range(1, 5);
+                switch (h)
+                {
+                    case 1:
+                        agilityV = h;
+                        break;
+                    case 2:
+                        agilityV = h;
+                        break;
+                    case 3:
+                        agilityV = h;
+                        break;
+                    case 4:
+                        agilityV = h;
+                        break;
+                    case 5:
+                        agilityV = h;
+                        break;
+
+                }
+                h = Random.Range(1, 5);
+                switch (h)
+                {
+                    case 1:
+                        staminaV = h;
+                        break;
+                    case 2:
+                        staminaV = h;
+                        break;
+                    case 3:
+                        staminaV = h;
+                        break;
+                    case 4:
+                        staminaV = h;
+                        break;
+                    case 5:
+                        staminaV = h;
+                        break;
+
+                }
+                h = Random.Range(1, 5);
+                switch (h)
+                {
+                    case 1:
+                        intelligenceV = h;
+                        break;
+                    case 2:
+                        intelligenceV = h;
+                        break;
+                    case 3:
+                        intelligenceV = h;
+                        break;
+                    case 4:
+                        intelligenceV = h;
+                        break;
+                    case 5:
+                        intelligenceV = h;
+                        break;
+
+                }
+                h = Random.Range(1, 5);
+                switch (h)
+                {
+                    case 1:
+                        combatTrainingV = h;
+                        break;
+                    case 2:
+                        combatTrainingV = h;
+                        break;
+                    case 3:
+                        combatTrainingV = h;
+                        break;
+                    case 4:
+                        combatTrainingV = h;
+                        break;
+                    case 5:
+                        combatTrainingV = h;
+                        break;
+
+                }
+                h = Random.Range(1, 5);
+                switch (h)
+                {
+                    case 1:
+                        marchingV = h;
+                        break;
+                    case 2:
+                        marchingV = h;
+                        break;
+                    case 3:
+                        marchingV = h;
+                        break;
+                    case 4:
+                        marchingV = h;
+                        break;
+                    case 5:
+                        marchingV = h;
+                        break;
+
+                }
+                break;
 
             case 3: //int rank & sprite rank
 
                 int r;
-                r = Random.Range(1, 7);
-
-                switch (r) { 
-                    case 1:
+                r = Random.Range(1, 5500);
+                float procent;
+                float costR;
+                if (gm.rep <= 30) { costR = r; procent = 30f; costR /= 100; costR *= procent; int costRP = Mathf.RoundToInt(costR); r = costRP; }
+                else if (gm.rep > 30 && gm.rep <= 50) { costR = r; procent = 50f; costR /= 100; costR *= procent; int costRP = Mathf.RoundToInt(costR); r = costRP; }
+                else if (gm.rep > 50 && gm.rep <= 80) { costR = r; procent = 70f; costR /= 100; costR *= procent; int costRP = Mathf.RoundToInt(costR); r = costRP; }
+                if (r <= 200)
+                {
                     rankV = "Private";
                     rankSV = gm.privates;
-
-                    break;
-                    case 2:
-                        rankV = "Capral";
-                        rankSV = gm.capral;
-                        break;
-                    case 3:
-                        rankV = "Sergant";
-                        rankSV = gm.sergant;
-                        break;
-                    case 4:
-                        rankV = "Super Sergant";
-                        rankSV = gm.superSergant;
-                        break;
-                    case 5:
-                        rankV = "Special Sergant";
-                        rankSV = gm.specialSergant;
-                        break;
-                    case 6:
-                        rankV = "Master Sergant";
-                        rankSV = gm.masterSergant;
-                        break;
-                    case 7:
-                        rankV = "UpperSergant";
-                        rankSV = gm.upperSergant;
-                        break;
+                    expV = r;
+                    if (strengthV > 2) { strengthV = 2; }
+                    if (agilityV > 2) { agilityV = 2; }
+                    if (staminaV > 2) { staminaV = 2; }
+                    if (intelligenceV > 3) { intelligenceV = 3; }
+                    if (combatTrainingV > 2) { combatTrainingV = 2; }
+                    if (marchingV > 3) { marchingV = 3; }
                 }
-            break;
-            
+                else if (r > 200 && r <= 700)
+                {
+                    rankV = "Capral";
+                    rankSV = gm.capral;
+                    expV = r;
+                    if (strengthV > 2) { strengthV = 2; }
+                    if (agilityV > 2) { agilityV = 2; }
+                    if (staminaV > 2) { staminaV = 2; }
+                    if (intelligenceV > 3) { intelligenceV = 3; }
+                    if (combatTrainingV > 3) { combatTrainingV = 3; }
+                    if (marchingV > 3) { marchingV = 3; }
+                }
+                else if (r > 700 && r <= 1300)
+                {
+                    rankV = "Sergant";
+                    rankSV = gm.sergant;
+                    expV = r;
+                    if (strengthV > 3) { strengthV = 3; }
+                    if (agilityV > 3) { agilityV = 3; }
+                    if (staminaV > 3) { staminaV = 3; }
+                    if (intelligenceV > 3) { intelligenceV = 3; }
+                    if (combatTrainingV > 2) { combatTrainingV = 2; }
+                    if (marchingV > 3) { marchingV = 3; }
+                }
+                else if (r > 1300 && r <= 2000)
+                {
+                    rankV = "Super Sergant";
+                    rankSV = gm.superSergant;
+                    expV = r;
+                    if (strengthV > 3) { strengthV = 3; }
+                    if (agilityV > 3) { agilityV = 3; }
+                    if (staminaV > 3) { staminaV = 3; }
+                    if (intelligenceV > 3) { intelligenceV = 3; }
+                    if (combatTrainingV > 3) { combatTrainingV = 3; }
+                    if (marchingV > 3) { marchingV = 3; }
+                }
+                else if (r > 2000 && r <= 3000)
+                {
+                    rankV = "Special Sergant";
+                    rankSV = gm.specialSergant;
+                    expV = r;
+                    if (strengthV > 3) { strengthV = 3; }
+                    if (agilityV > 3) { agilityV = 3; }
+                    if (staminaV > 3) { staminaV = 3; }
+                    if (intelligenceV > 4) { intelligenceV = 4; }
+                    if (combatTrainingV > 4) { combatTrainingV = 4; }
+                    if (marchingV > 3) { marchingV = 3; }
+                }
+                else if (r > 3000 && r <= 4100)
+                {
+                    rankV = "Master Sergant";
+                    rankSV = gm.masterSergant;
+                    expV = r;
+                    if (strengthV > 4) { strengthV = 4; }
+                    if (agilityV > 4) { agilityV = 4; }
+                    if (staminaV > 4) { staminaV = 4; }
+                    if (intelligenceV > 4) { intelligenceV = 4; }
+                    if (combatTrainingV > 4) { combatTrainingV = 4; }
+                    if (marchingV > 4) { marchingV = 4; }
+                }
+                else if (r > 4100)
+                {
+                    rankV = "Upper Sergant";
+                    rankSV = gm.upperSergant;
+                    expV = r;
+                }
+                break;
+
         }
-    
+
     }
 
 
@@ -189,7 +449,8 @@ public class Recruiting : MonoBehaviour
 [System.Serializable]
 public class RGcadets
 {
-     
+    [Tooltip("Для поиска по карте")]
+    public int id;
     [Tooltip("Имя для кадета")]
     public string name;
 
@@ -202,20 +463,50 @@ public class RGcadets
     [Tooltip("Спрайт ранга")]
     public Sprite spriteRank;
 
+    [Tooltip("EXP")]
+    public int exp;
+
+    [Tooltip("Сила")]
+    public int strength;
+
+    [Tooltip("Ловкость")]
+    public int agility;
+
+    [Tooltip("Выносливость")]
+    public int stamina;
+
+    [Tooltip("Интелект")]
+    public int intelligence;
+
+    [Tooltip("Боевая подготовка")]
+    public int combatTraining;
+
+    [Tooltip("Строевая подготовка")]
+    public int marching;
 
 
-    public RGcadets(string nameC, Sprite NPC, string rankC, Sprite spriteRankC)
+
+
+    public RGcadets(int idC, string nameC, Sprite NPC, string rankC, Sprite spriteRankC, int expC, int strengthC, int agilityC, int staminaC, int intelligenceC, int combatTrainingC, int marchingC)
     {
+        id = idC;
         name = nameC;
         spriteNPC = NPC;
         rank = rankC;
         spriteRank = spriteRankC;
+        exp = expC;
+        strength = strengthC;
+        agility = agilityC;
+        stamina = staminaC;
+        intelligence = intelligenceC;
+        combatTraining = combatTrainingC;
+        marching = marchingC;
     }
 }
 
 [System.Serializable]
 
-public class Complex 
+public class Complex
 {
     [Tooltip("Текст для имени кадета")]
     public Text name;
@@ -224,7 +515,7 @@ public class Complex
     [Tooltip("Картинка кадета")]
     public Image sprite;
 
-    public Complex(Text nameC, Text rankC, Image spriteC) 
+    public Complex(Text nameC, Text rankC, Image spriteC)
     {
         name = nameC;
         rank = rankC;
